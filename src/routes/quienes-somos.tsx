@@ -155,7 +155,7 @@ function QuienesSomos() {
         </Reveal>
         <ul className="mt-12 grid gap-6 lg:grid-cols-3">
           {compromiso.map((c, i) => {
-            const Icon = iconosCompromiso[i];
+            const Icon = iconosCompromiso[i] ?? Leaf;
             return (
               <Reveal as="li" key={c.titulo} delay={i * 100}>
                 <article className="card-soft h-full p-8">

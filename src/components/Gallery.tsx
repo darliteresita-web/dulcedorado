@@ -47,11 +47,11 @@ export function Gallery() {
         ))}
       </ul>
 
-      {activa !== null ? (
+      {activa !== null && fotos[activa] ? (
         <div
           role="dialog"
           aria-modal="true"
-          aria-label={fotos[activa].alt}
+          aria-label={fotos[activa]!.alt}
           className="fixed inset-0 z-[60] grid place-items-center bg-ink/90 p-4 animate-in fade-in duration-200"
           onClick={() => setActiva(null)}
         >
@@ -64,8 +64,8 @@ export function Gallery() {
             <X className="size-5" />
           </button>
           <img
-            src={fotos[activa].src}
-            alt={fotos[activa].alt}
+            src={fotos[activa]!.src}
+            alt={fotos[activa]!.alt}
             className="max-h-[85vh] w-auto rounded-xl object-contain"
           />
         </div>

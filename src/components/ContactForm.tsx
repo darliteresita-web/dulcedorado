@@ -36,12 +36,12 @@ export function ContactForm({ productoInicial = "" }: { productoInicial?: string
     const telefono = String(data.get("telefono") ?? "").trim();
     const mensaje = String(data.get("mensaje") ?? "").trim();
 
-    if (nombre.length < 3) nuevos.nombre = "Ingresa tu nombre completo.";
+    if (nombre.length < 3) nuevos["nombre"] = "Ingresa tu nombre completo.";
     if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(correo))
-      nuevos.correo = "Ingresa un correo electrónico válido.";
+      nuevos["correo"] = "Ingresa un correo electrónico válido.";
     if (telefono.replace(/\D/g, "").length < 6)
-      nuevos.telefono = "Ingresa un número de teléfono válido.";
-    if (mensaje.length < 10) nuevos.mensaje = "Cuéntanos brevemente tu consulta (mín. 10 caracteres).";
+      nuevos["telefono"] = "Ingresa un número de teléfono válido.";
+    if (mensaje.length < 10) nuevos["mensaje"] = "Cuéntanos brevemente tu consulta (mín. 10 caracteres).";
 
     setErrores(nuevos);
     if (Object.keys(nuevos).length === 0) setEnviado(true);
@@ -88,8 +88,8 @@ export function ContactForm({ productoInicial = "" }: { productoInicial?: string
             name="nombre"
             className={campo}
             placeholder="Tu nombre y apellido"
-            aria-invalid={!!errores.nombre}
-            aria-describedby={errores.nombre ? "nombre-error" : undefined}
+            aria-invalid={!!errores["nombre"]}
+            aria-describedby={errores["nombre"] ? "nombre-error" : undefined}
           />
           <Error name="nombre" />
         </div>
@@ -118,8 +118,8 @@ export function ContactForm({ productoInicial = "" }: { productoInicial?: string
             type="email"
             className={campo}
             placeholder="nombre@correo.com"
-            aria-invalid={!!errores.correo}
-            aria-describedby={errores.correo ? "correo-error" : undefined}
+            aria-invalid={!!errores["correo"]}
+            aria-describedby={errores["correo"] ? "correo-error" : undefined}
           />
           <Error name="correo" />
         </div>
@@ -134,8 +134,8 @@ export function ContactForm({ productoInicial = "" }: { productoInicial?: string
             type="tel"
             className={campo}
             placeholder="+51 999 999 999"
-            aria-invalid={!!errores.telefono}
-            aria-describedby={errores.telefono ? "telefono-error" : undefined}
+            aria-invalid={!!errores["telefono"]}
+            aria-describedby={errores["telefono"] ? "telefono-error" : undefined}
           />
           <Error name="telefono" />
         </div>
@@ -196,8 +196,8 @@ export function ContactForm({ productoInicial = "" }: { productoInicial?: string
             rows={5}
             className={campo}
             placeholder="Cuéntanos qué necesitas: producto, volumen, frecuencia y ciudad de entrega."
-            aria-invalid={!!errores.mensaje}
-            aria-describedby={errores.mensaje ? "mensaje-error" : undefined}
+            aria-invalid={!!errores["mensaje"]}
+            aria-describedby={errores["mensaje"] ? "mensaje-error" : undefined}
           />
           <Error name="mensaje" />
         </div>

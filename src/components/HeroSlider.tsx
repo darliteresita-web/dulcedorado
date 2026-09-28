@@ -101,15 +101,15 @@ export function HeroSlider() {
               Producción y comercialización
             </p>
             <h1 className="mt-5 text-4xl leading-[1.08] text-balance text-cream sm:text-5xl lg:text-6xl">
-              {slides[index].titulo}
+              {slides[index]!.titulo}
             </h1>
-            {slides[index].texto ? (
+            {slides[index]!.texto ? (
               <p className="mt-5 max-w-xl text-base leading-relaxed text-cream/85 sm:text-lg">
-                {slides[index].texto}
+                {slides[index]!.texto}
               </p>
             ) : null}
             <div className="mt-8 flex flex-wrap gap-3">
-              {slides[index].acciones.map((a) => (
+              {slides[index]!.acciones.map((a) => (
                 <Link
                   key={a.label}
                   to={a.to}

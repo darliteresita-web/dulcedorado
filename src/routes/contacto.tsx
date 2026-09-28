@@ -6,9 +6,8 @@ import { ContactForm } from "@/components/ContactForm";
 import { site, whatsappUrl } from "@/config/site";
 
 export const Route = createFileRoute("/contacto")({
-  validateSearch: (search: Record<string, unknown>) => ({
-    producto: typeof search.producto === "string" ? search.producto : undefined,
-  }),
+  validateSearch: (search: Record<string, unknown>): { producto?: string } =>
+    typeof search["producto"] === "string" ? { producto: search["producto"] } : {},
   head: () => ({
     meta: [
       { title: "Contacto | Solicita tu cotización de aguaymanto" },
@@ -113,7 +112,7 @@ function Contacto() {
           </Reveal>
 
           <Reveal delay={120}>
-            <ContactForm productoInicial={producto} />
+            <ContactForm productoInicial={producto ?? ""} />
           </Reveal>
         </div>
       </section>
