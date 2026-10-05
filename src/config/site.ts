@@ -8,6 +8,8 @@ export const site = {
   nombre: "[NOMBRE DE LA EMPRESA]",
   marca: "AGUAYMANTO PERÚ",
   tagline: "Calidad y compromiso desde el campo peruano.",
+  /** ID del video de YouTube del botón "Ver video" (video de ejemplo, reemplazar por el oficial). */
+  videoYoutubeId: "aG-EexHoO10",
   descripcion:
     "Producción, comercialización y venta de aguaymanto peruano seleccionado para clientes particulares, restaurantes, tiendas, distribuidores y mayoristas.",
 

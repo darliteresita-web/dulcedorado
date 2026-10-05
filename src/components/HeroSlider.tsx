@@ -1,5 +1,8 @@
 import { Link } from "@tanstack/react-router";
 import { useCallback, useEffect, useRef, useState } from "react";
+import { Play } from "lucide-react";
+import { VideoModal } from "./VideoModal";
+import { site } from "@/config/site";
 import heroAguaymanto from "@/assets/hero-aguaymanto.jpg";
 import heroCampo from "@/assets/hero-campo.jpg";
 import heroCosecha from "@/assets/hero-cosecha.jpg";
@@ -43,6 +46,11 @@ const slides: Slide[] = [
 export function HeroSlider() {
   const [index, setIndex] = useState(0);
   const paused = useRef(false);
+  const [videoOpen, setVideoOpen] = useState(false);
+  const closeVideo = useCallback(() => setVideoOpen(false), []);
+  useEffect(() => {
+    paused.current = videoOpen;
+  }, [videoOpen]);
 
   const go = useCallback((i: number) => setIndex(((i % slides.length) + slides.length) % slides.length), []);
 
@@ -119,6 +127,16 @@ export function HeroSlider() {
                 </Link>
               ))}
             </div>
+            <button
+              type="button"
+              onClick={() => setVideoOpen(true)}
+              className="group mt-6 inline-flex items-center gap-3 text-sm font-semibold text-cream"
+            >
+              <span className="grid size-12 place-items-center rounded-full bg-gold text-forest shadow-lift transition group-hover:scale-110">
+                <Play className="ml-0.5 size-5 fill-current" aria-hidden="true" />
+              </span>
+              Ver video
+            </button>
           </div>
         </div>
       </div>
@@ -139,6 +157,7 @@ export function HeroSlider() {
           />
         ))}
       </div>
+      {videoOpen ? <VideoModal videoId={site.videoYoutubeId} onClose={closeVideo} /> : null}
     </section>
   );
 }
