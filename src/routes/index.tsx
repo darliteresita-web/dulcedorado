@@ -77,7 +77,7 @@ function Index() {
           <Reveal>
             <div className="flex flex-wrap items-end justify-between gap-6">
               <SectionTitle
-                eyebrow="Nuestros productos"
+                eyebrow="Nuestro producto bandera"
                 title="Aguaymanto seleccionado para cada tipo de cliente"
               />
               <Link to="/productos" className="btn-base btn-outline-forest">
