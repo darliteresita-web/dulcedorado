@@ -37,13 +37,13 @@ function Index() {
     <>
       <HeroSlider />
 
-      {/* Sobre nosotros */}
+      {/* Sobre la impresa */}
       <section className="container-page py-20 lg:py-28">
         <div className="grid gap-12 lg:grid-cols-2 lg:items-center">
           <Reveal>
             <SectionTitle
-              eyebrow="Sobre nosotros"
-              title="Comprometidos con la calidad del aguaymanto peruano"
+              eyebrow="sobre la empresa"
+              title="Comprometidos con la calidad del aguaymanto limatambeño"
               description="Somos una empresa dedicada a la producción y comercialización de aguaymanto, comprometida con ofrecer productos de calidad y construir relaciones comerciales duraderas con nuestros clientes."
             />
             <Link to="/quienes-somos" className="btn-base btn-outline-forest mt-8">
