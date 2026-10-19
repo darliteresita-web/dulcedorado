@@ -13,7 +13,7 @@ import heroCosecha from "@/assets/hero-cosecha.jpg";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Aguaymanto Perú | Venta y producción de aguaymanto peruano" },
+      { title: "Aguaymanto Perú | Venta y producción de aguaymanto peruano - Limatambo" },
       {
         name: "description",
         content:
