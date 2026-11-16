@@ -45,7 +45,7 @@ function QuienesSomos() {
       <section id="nuestra-empresa" className="container-page py-20 lg:py-24">
         <div className="grid gap-12 lg:grid-cols-2 lg:items-center">
           <Reveal>
-            <SectionTitle eyebrow="Nuestra empresa" title="Aguaymanto peruano, trabajado con criterio" />
+            <SectionTitle eyebrow="Sobre Nuestra empresa" title="Aguaymanto peruano, trabajado con criterio" />
             <div className="mt-6 space-y-4 text-base leading-relaxed text-muted-foreground">
               <p>
                 Somos una empresa dedicada a la producción, comercialización y venta de aguaymanto.
